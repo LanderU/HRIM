@@ -141,10 +141,13 @@ def main(args):
         elif args.action == "compile":
             path = os.getcwd()
             composition = parser.parseComposition(os.path.join(os.getcwd(),uniquePath))
+            if len(composition.name)==0 or len(composition.kind)==0 or len(composition.vendor)==0 or len(composition.product)==0 :
+                print("Fill all composition information before compiling.")
+                sys.exit(1)
             if os.path.exists(os.path.join(path, "composition", composition.name)):
                 shutil.rmtree(os.path.join(path, "composition", composition.name))
             compiler = ModuleCompiler()
-            compiler.genPath = "composition/"+composition.name
+            compiler.genPath = "composition/hrim_"+composition.kind+"_"+composition.name+"_"+composition.vendor+"_"+composition.product
             compiler.dataTypes = ModuleParser().getDataTypes(args.platform)
             compiler.composition = True
             genBase(parser, compiler)

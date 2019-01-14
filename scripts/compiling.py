@@ -348,7 +348,7 @@ class ModuleCompiler:
 
     def composeModule(self, modules, paths):
         model = open("model.xml", "w")
-        composition = "<?xml version=\"1.0\"?>\n<composition name=\"defaultName\">\n"
+        composition = "<?xml version=\"1.0\"?>\n<composition name=\"\" kind=\"\" vendor=\"\" product=\"\">\n"
         strContent=""
         index = 0
         for module in modules:

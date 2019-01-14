@@ -199,7 +199,7 @@ class ModuleParser:
     def parseComposition(self, path):
         compTree = ET.parse(path)
         compRoot=compTree.getroot()
-        composition = Composition(compRoot.attrib.get("name"))
+        composition = Composition(compRoot.attrib.get("name"), compRoot.attrib.get("kind"), compRoot.attrib.get("vendor"), compRoot.attrib.get("product"))
         for model in compRoot:
             topicList = []
             for topic in model.findall("topic"):
