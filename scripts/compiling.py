@@ -365,7 +365,7 @@ class ModuleCompiler:
             ownTopics.sort(key=lambda topic: topic.name)
             ownParams.sort(key=lambda param: param.name)
             for topic in ownTopics:
-                strTopics = strTopics+(getTabs(2)+"<topic name=\"{}\"/>\n").format(topic.name)
+                strTopics = strTopics+(getTabs(2)+"<topic name=\"{}\" type=\"{}\" description=\"{}\"/>\n").format(topic.name, topic.type, topic.desc)
             for param in ownParams:
                 strParams = strParams+(getTabs(2)+"<param name=\"{}\"/>\n").format(param.name)
             strTopics = strTopics+strParams+getTabs(1)+"</model>"
