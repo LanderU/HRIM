@@ -16,7 +16,7 @@ setup(name='hrim',
           ]
       },
     install_requires=[
-        'lxml',
+        'lxml==4.1.0',
       ],
       keywords=['HRIM','H-ROS', 'modular', 'ros2', 'robot operating system'],
       )
